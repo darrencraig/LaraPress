@@ -49,27 +49,30 @@ class NewsServiceProvider extends ServiceProvider
      */
     public function registerCustomFields()
     {
-        \acf_add_local_field_group(array(
-            'key' => 'news_fields',
-            'title' => 'News',
-            'fields' => array (
-                array (
-                    'key' => 'subtitle',
-                    'label' => 'Subtitle',
-                    'name' => 'subtitle',
-                    'type' => 'text',
-                )
-            ),
-            'location' => array (
-                array (
+        if( function_exists('acf_add_local_field_group') ) {
+            \acf_add_local_field_group(array(
+                'key' => 'news_fields',
+                'title' => 'News',
+                'fields' => array (
                     array (
-                        'param' => 'post_type',
-                        'operator' => '==',
-                        'value' => 'news',
+                        'key' => 'subtitle',
+                        'label' => 'Subtitle',
+                        'name' => 'subtitle',
+                        'type' => 'text',
+                    )
+                ),
+                'location' => array (
+                    array (
+                        array (
+                            'param' => 'post_type',
+                            'operator' => '==',
+                            'value' => 'news',
+                        ),
                     ),
                 ),
-            ),
-        ));
+            ));
+        }
+
 
     }
 

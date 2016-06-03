@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Corcel\Auth\ResetsPasswords as CorcelResetsPasswords;
 
 class PasswordController extends Controller
 {
@@ -18,7 +19,9 @@ class PasswordController extends Controller
     |
     */
 
-    use ResetsPasswords;
+    use ResetsPasswords, CorcelResetsPasswords {
+        CorcelResetsPasswords::resetPassword insteadof ResetsPasswords;
+    }
 
     /**
      * Create a new password controller instance.

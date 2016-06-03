@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
 Route::resource('news', 'NewsController');
+
+Route::get('/', 'PageController@show');
+Route::get('{any}', 'PageController@show');

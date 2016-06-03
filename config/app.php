@@ -150,8 +150,12 @@ return [
 
         Corcel\Providers\Laravel\AuthServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
-        
+
+        App\Providers\PostThumbnailServiceProvider::class,
+
+        App\Pages\PageServiceProvider::class,
         App\News\NewsServiceProvider::class,
+        App\Videos\VideoServiceProvider::class,
 
         /*
          * Application Service Providers...

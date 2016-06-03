@@ -1,5 +1,7 @@
 @extends('layouts.website')
 
 @section('content')
-    <h1>{{ $article->title }}</h1>
+
+    <h1>{{ $page->post_title }}</h1>
+
 @stop

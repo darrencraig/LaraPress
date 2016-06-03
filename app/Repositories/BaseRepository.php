@@ -22,6 +22,9 @@ abstract class BaseRepository implements Repository
      */
     public function findBySlug($slug)
     {
-        return Post::type($this->post_type)->slug($slug)->status('publish')->first();
+        $post = Post::type($this->post_type)->slug($slug)->status('publish')->first();
+        apply_filters ( 'wp_title', $post->post_title);
+
+        return $post;
     }
 }
