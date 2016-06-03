@@ -148,6 +148,9 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        Corcel\Providers\Laravel\AuthServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+        
         App\News\NewsServiceProvider::class,
 
         /*

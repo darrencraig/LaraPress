@@ -20,10 +20,25 @@ class NewsController extends Controller
         $this->newsRepository = $newsRepository;
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
-        $articlesQuery = $this->newsRepository->all();
+        $articles = $this->newsRepository->all();
 
-        return view('news.index')->with('articles', $articlesQuery->posts);
+        return view('news.index', compact("articles"));
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show($slug)
+    {
+        $article = $this->newsRepository->findBySlug($slug);
+
+        if(!$article) abort(404);
+
+        return view('news.show', compact("article"));
     }
 }

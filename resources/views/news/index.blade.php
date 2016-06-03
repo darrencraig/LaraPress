@@ -1,5 +1,5 @@
 <ul>
     @foreach($articles as $article)
-        <li>{!! $article->post_title !!}</li>
+        <li>{!! $article->meta->subtitle !!}</li>
     @endforeach
 </ul>

@@ -59,5 +59,5 @@ define('DISALLOW_FILE_EDIT', true);
 
 
 if (!defined('ABSPATH')) {
-    define('ABSPATH', public_path('wp'));
+    define('ABSPATH', public_path('wp/'));
 }

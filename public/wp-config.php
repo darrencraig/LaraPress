@@ -42,7 +42,7 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 */
 
 require_once(dirname(__DIR__) . '/bootstrap/wordpress.php');
-require_once(ABSPATH . 'wp-settings.php');
+require_once(ABSPATH . '/wp-settings.php');
 
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 

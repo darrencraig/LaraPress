@@ -2,12 +2,7 @@
 
 namespace App\News\Repositories;
 
-use App\Repositories\Repository;
-
-class NewsRepository extends Repository
+interface NewsRepository
 {
-    public function __construct()
-    {
-        $this->post_type = 'news';
-    }
+
 }

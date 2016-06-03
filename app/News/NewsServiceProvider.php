@@ -2,7 +2,10 @@
 
 namespace App\News;
 
+use App\News\Repositories\CachingNewsRepository;
+use App\News\Repositories\DefaultNewsRepository;
 use App\News\Repositories\NewsRepository;
+use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Support\ServiceProvider;
 
 class NewsServiceProvider extends ServiceProvider
@@ -14,8 +17,8 @@ class NewsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(NewsRepository::class, function ($app) {
-            return new NewsRepository();
+        $this->app->bind(NewsRepository::class, function ($app) {
+            return app(DefaultNewsRepository::class);
         });
 
         $this->loadCustomPostTypes();
@@ -72,7 +75,7 @@ class NewsServiceProvider extends ServiceProvider
 
     private function loadCustomPostTypes()
     {
-        add_action( 'load_post_type', [$this, 'registerPostType']);
-        do_action('load_post_type');
+        \add_action( 'load_post_type', [$this, 'registerPostType']);
+        \do_action('load_post_type');
     }
 }

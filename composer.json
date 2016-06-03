@@ -10,7 +10,9 @@
         "johnpbloch/wordpress": "~4.5",
         "wpackagist-plugin/wordpress-seo": "~3.0",
         "wpackagist-plugin/wordpress-importer": "0.6.1",
-        "wpackagist-plugin/acf-field-date-time-picker": "~2.0.18"
+        "wpackagist-plugin/acf-field-date-time-picker": "~2.0.18",
+        "jgrossi/corcel": "^1.1",
+        "barryvdh/laravel-debugbar": "^2.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
