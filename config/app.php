@@ -148,6 +148,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        App\News\NewsServiceProvider::class,
+
         /*
          * Application Service Providers...
          */

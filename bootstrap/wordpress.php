@@ -26,6 +26,10 @@ define('SCRIPT_DEBUG', env('SCRIPT_DEBUG', false));
 
 define('WP_ENV', env('APP_ENV') ? env('APP_ENV') : 'development');
 
+define('CONTENT_DIR', '/app');
+define('WP_CONTENT_DIR', public_path(CONTENT_DIR));
+define('WP_CONTENT_URL', WP_HOME . CONTENT_DIR);
+
 /**
  * DB settings
  */
@@ -55,5 +59,5 @@ define('DISALLOW_FILE_EDIT', true);
 
 
 if (!defined('ABSPATH')) {
-    // define('ABSPATH', __DIR__ . 'public/wp/');
+    define('ABSPATH', public_path('wp'));
 }
