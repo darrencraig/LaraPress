@@ -7,6 +7,9 @@
  * @author   Taylor Otwell <taylorotwell@gmail.com>
  */
 
+define('WP_USE_THEMES', false);
+require(dirname(__FILE__) . '/wp/wp-blog-header.php');
+
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader
@@ -20,6 +23,7 @@
 */
 
 require __DIR__.'/../bootstrap/autoload.php';
+
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +57,10 @@ $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );
 
+
+
 $response->send();
 
+
 $kernel->terminate($request, $response);
+

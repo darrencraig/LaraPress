@@ -6,7 +6,11 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.2.*"
+        "laravel/framework": "5.2.*",
+        "johnpbloch/wordpress": "~4.5",
+        "wpackagist-plugin/wordpress-seo": "~3.0",
+        "wpackagist-plugin/wordpress-importer": "0.6.1",
+        "wpackagist-plugin/acf-field-date-time-picker": "~2.0.18"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -15,6 +19,12 @@
         "symfony/css-selector": "2.8.*|3.0.*",
         "symfony/dom-crawler": "2.8.*|3.0.*"
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://wpackagist.org"
+        }
+    ],
     "autoload": {
         "classmap": [
             "database"
@@ -46,5 +56,13 @@
     },
     "config": {
         "preferred-install": "dist"
+    },
+    "extra": {
+        "installer-paths": {
+            "public/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+            "public/app/plugins/{$name}/": ["type:wordpress-plugin"],
+            "public/app/themes/{$name}/": ["type:wordpress-theme"]
+        },
+        "wordpress-install-dir": "public/wp"
     }
 }
