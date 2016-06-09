@@ -18,7 +18,7 @@ class NewsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(NewsRepository::class, function ($app) {
-            return app(DefaultNewsRepository::class);
+            return app(CachingNewsRepository::class);
         });
 
         $this->loadCustomPostTypes();

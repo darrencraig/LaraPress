@@ -25,7 +25,7 @@ class PageController extends Controller
     public function show($slug = 'home')
     {
         $page = $this->pageRepository->findBySlug($slug);
-
+  
         if(!$page) abort(404);
 
         return view('pages.show', compact("page"));

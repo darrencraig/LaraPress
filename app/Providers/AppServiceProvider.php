@@ -13,7 +13,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        add_action( 'wp_enqueue_scripts', function()
+        {
+            wp_register_style( 'theme-styles', __DIR__ . 'css/site.css' );
+            wp_enqueue_style( 'theme-styles' );
+        });
     }
 
     /**

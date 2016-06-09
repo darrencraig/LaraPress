@@ -30,8 +30,17 @@ class CachingNewsRepository extends BaseRepository implements NewsRepository
 
     public function all()
     {
-        return $this->cache->remember('news.all', 5, function() {
+        return $this->cache->remember('news.all', 5, function()
+        {
             return $this->newsRepository->all();
+        });
+    }
+
+    public function findBySlug($slug)
+    {
+        return $this->cache->remember('news.' . $slug, 5, function() use($slug)
+        {
+            return $this->newsRepository->findBySlug($slug);
         });
     }
 }

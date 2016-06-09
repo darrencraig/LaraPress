@@ -23,8 +23,9 @@ abstract class BaseRepository implements Repository
     public function findBySlug($slug)
     {
         $post = Post::type($this->post_type)->slug($slug)->status('publish')->first();
-        apply_filters ( 'wp_title', $post->post_title);
 
+        apply_filters ( 'wp_title', $post->meta->_yoast_wpseo_title == '' ? $post->post_title : $post->meta->_yoast_wpseo_title);
+        
         return $post;
     }
 }

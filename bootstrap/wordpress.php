@@ -9,7 +9,6 @@ $dotenv->required(['DB_DATABASE', 'DB_USERNAME', 'DB_PASSWORD']);
 
 // End dirty hacky.
 
-
 /* Database Settings (Wordpress) */
 define('DB_NAME', env('DB_DATABASE'));
 define('DB_USER', env('DB_USERNAME'));

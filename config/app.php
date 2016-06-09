@@ -153,6 +153,7 @@ return [
 
         App\Providers\PostThumbnailServiceProvider::class,
 
+        App\Options\OptionsServiceProvider::class,
         App\Pages\PageServiceProvider::class,
         App\News\NewsServiceProvider::class,
         App\Videos\VideoServiceProvider::class,
@@ -210,6 +211,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        'Options' => \App\Options\Facades\Options::class
 
     ],
 

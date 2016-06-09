@@ -13,5 +13,6 @@
 
 Route::resource('news', 'NewsController');
 
+
 Route::get('/', 'PageController@show');
 Route::get('{any}', 'PageController@show');

@@ -5,7 +5,7 @@ namespace App\News\Repositories;
 use Illuminate\Contracts\Cache\Repository;
 use App\Repositories\BaseRepository;
 
-class CachingNewsRepository extends BaseRepository implements NewsRepository
+class CachingVideoRepository extends BaseRepository implements NewsRepository
 {
     /**
      * @var NewsRepository
