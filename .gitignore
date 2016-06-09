@@ -7,4 +7,5 @@ Homestead.json
 .vagrant/
 .DS_Store
 .idea
+public/app/uploads/*
 public/wp
